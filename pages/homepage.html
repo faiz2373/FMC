@@ -140,11 +140,12 @@
   <label class="block text-sm font-semibold text-gray-700 mb-2">
     Travel Type
   </label>
-  <select name="travelType" class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all">
-    <option disabled selected hidden>Select</option>
-    <option>International</option>
-    <option>Domestic</option>
-  </select>
+  <select id="travelType" name="travelType" onchange="updateDestinations()"
+      class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all">
+      <option disabled selected hidden>Select travel type</option>
+      <option value="international">International</option>
+      <option value="domestic">Domestic</option>
+    </select>
 </div>
 
 <!-- Destination -->
@@ -152,19 +153,10 @@
   <label class="block text-sm font-semibold text-gray-700 mb-2">
     Choose Destination
   </label>
-  <select name="destination" class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all">
-    <option disabled selected hidden>Select</option>
-    <option>Thailand</option>
-    <option>Bali, Indonesia</option>
-    <option>Maldives</option>
-    <option>Dubai, UAE</option>
-    <option>Vietnam</option>
-    <option>Malaysia</option>
-    <option>China</option>
-    <option>Azerbaijan</option>
-    <option>Kazakhstan</option>
-    <option>Lakshadweep</option>
-  </select>
+ <select id="destination" name="destination"
+      class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all">
+      <option disabled selected hidden>Select destination</option>
+    </select>
 </div>
 
 <!-- Expected Travel Date -->
@@ -527,6 +519,35 @@
     </footer>
 
     <script>
+       
+  const internationalDestinations = [
+    "Malaysia", "Singapore", "Bali (Indonesia)", "Thailand", "Vietnam",
+    "Cambodia", "Philippines", "Dubai", "Kazakhstan", "Maldives",
+    "Georgia", "Bhutan", "Japan", "Nepal"
+  ];
+
+  const domesticDestinations = [
+    "Andaman and Nicobar Islands", "Lakshadweep", "Kashmir", "Kulu-Manali",
+    "Ladakh", "Nepal", "Delhi-Agra", "Meghalaya"
+  ];
+
+  function updateDestinations() {
+    const travelType = document.getElementById("travelType").value;
+    const destinationSelect = document.getElementById("destination");
+
+    // Clear previous options
+    destinationSelect.innerHTML = `<option disabled selected hidden>Select destination</option>`;
+
+    const selectedList = travelType === "international" ? internationalDestinations : domesticDestinations;
+
+    selectedList.forEach(dest => {
+      const option = document.createElement("option");
+      option.value = dest;
+      option.textContent = dest;
+      destinationSelect.appendChild(option);
+    });
+  }
+
         // Mobile menu toggle
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
