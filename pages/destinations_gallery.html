@@ -257,25 +257,28 @@
  <!-- Filter Controls -->
 <section class="py-4 bg-surface border-t border-gray-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-      <div class="flex flex-col sm:flex-row gap-4">
-        <div class="flex items-center space-x-2">
-          <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.707A1 1 0 013 7V4z" />
-          </svg>
-          <span class="font-medium text-text-primary">Filter by Category</span>
-        </div>
-        <!-- Moved filter-buttons outside span for proper layout -->
-        <div id="filter-buttons" class="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center my-4">
-          <button class="filter-btn bg-yellow-400 px-4 py-2 rounded hover:bg-yellow-500" data-filter="all">All Destinations</button>
-          <button class="filter-btn bg-yellow-400 px-4 py-2 rounded hover:bg-yellow-500" data-filter="international">International</button>
-          <button class="filter-btn bg-yellow-400 px-4 py-2 rounded hover:bg-yellow-500" data-filter="domestic">Domestic</button>
-        </div>
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center space-x-2">
+        <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.707A1 1 0 013 7V4z" />
+        </svg>
+        <span class="font-medium text-text-primary">Filter by Category</span>
+      </div>
+
+      <!-- Dropdown Filter -->
+      <div>
+        <select id="filter-dropdown" class="bg-yellow-400 text-black font-medium px-4 py-2 rounded hover:bg-yellow-500 transition duration-200">
+  <option value="all">All Destinations</option>
+  <option value="international">International</option>
+  <option value="domestic">Domestic</option>
+</select>
+
       </div>
     </div>
   </div>
 </section>
+
 
 
 
@@ -1340,27 +1343,29 @@
                 nav.classList.remove('bg-white/98');
             }
         });
-    </script>
-<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+   
 
-<script>
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const destinationCards = document.querySelectorAll('.destination-card');
+  document.addEventListener("DOMContentLoaded", function () {
+    const dropdown = document.getElementById('filter-dropdown');
+    const cards = document.querySelectorAll('.destination-card');
 
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const filterValue = button.getAttribute('data-filter');
+    dropdown.addEventListener('change', function () {
+      const selected = this.value;
 
-            destinationCards.forEach(card => {
-                if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
+      cards.forEach(card => {
+        const category = card.getAttribute('data-category');
+
+        if (selected === 'all' || category === selected) {
+          card.classList.remove('hidden');
+          card.classList.add('block'); // ensure it is visible again
+        } else {
+          card.classList.add('hidden');
+        }
+      });
     });
+  });
 </script>
+
 
 </body>
 </html>
