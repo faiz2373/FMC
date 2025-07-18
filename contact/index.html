@@ -815,12 +815,12 @@ Looking for the best domestic or international tour package?<br>
       return;
     }
 
-    const message = `Hi, I'm *${name}* (%2B${phone}). I'd like to plan a trip. Here's my inquiry:%0A
-• *Destination:* ${destination || "Not specified"}%0A
-• *Travel Dates:* ${dates || "Flexible"}%0A
-• *Group Size:* ${group || "Not specified"}%0A
-• *Budget:* ${budget || "Not specified"}%0A
-• *Special Requirements:* ${notes || "None"}%0A
+    const message = `Hi, I'm *${name}* (${phone}). I'd like to plan a trip. Here's my inquiry:
+• *Destination:* ${destination || "Not specified"}
+• *Travel Dates:* ${dates || "Flexible"}
+• *Group Size:* ${group || "Not specified"}
+• *Budget:* ${budget || "Not specified"}
+• *Special Requirements:* ${notes || "None"}
 Please connect me with an expert for further discussion.`;
 
     const whatsappURL = `https://wa.me/919249091383?text=${encodeURI(message)}`;
