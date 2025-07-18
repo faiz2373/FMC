@@ -6,24 +6,6 @@
     <priority>1.00</priority>
   </url>
 
-  <url>
-    <loc>https://fmcholidays.in/contact/</loc>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://fmcholidays.in/destinations/</loc>
-    <priority>0.85</priority>
-  </url>
-
-  <url>
-    <loc>https://fmcholidays.in/resources/</loc>
-    <priority>0.70</priority>
-  </url>
-
-  <url>
-    <loc>https://fmcholidays.in/about/</loc>
-    <priority>0.80</priority>
-  </url>
+  
 
 </urlset>
