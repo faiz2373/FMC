@@ -126,7 +126,7 @@ No matter where you're headed, FMC Holidays ensures every step is smooth and per
                         </svg>
                         <span>Start Your Journey Consultation</span>
                     </a>
-                    <button onclick="scrollToForm()" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 rounded-xl font-cta font-semibold text-lg transition-smooth">
+                    <button onclick="document.getElementById('inquiry-form').scrollIntoView({ behavior: 'smooth' })" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 rounded-xl font-cta font-semibold text-lg transition-smooth">
                         Quick Inquiry Form
                     </button>
                 </div>
@@ -240,7 +240,7 @@ No matter where you're headed, FMC Holidays ensures every step is smooth and per
                                         <svg class="w-4 h-4 text-success" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span>15+ Years Experience</span>
+                                        <span>Years of Experience</span>
                                     </div>
                                     <div class="flex items-center space-x-1">
                                         <svg class="w-4 h-4 text-success" fill="currentColor" viewBox="0 0 20 20">
@@ -342,7 +342,7 @@ No matter where you're headed, FMC Holidays ensures every step is smooth and per
     </section>
 
     <!-- Quick Inquiry Form Section -->
-    <section id="inquiry-form" class="py-16 bg-surface">
+    <section id="inquiry-form" onsubmit="sendToWhatsApp(event)" class="py-16 bg-surface">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="font-display text-3xl md:text-4xl font-bold text-primary mb-4">
@@ -504,7 +504,7 @@ Looking for the best domestic or international tour package?<br>
                         <div>Available: 9 AM - 8 PM IST</div>
                         <div class="text-xs mt-1">Monday to Saturday</div>
                     </div>
-                    <button onclick="scheduleCallback()" class="bg-primary hover:bg-primary-800 text-white px-6 py-3 rounded-lg font-cta font-medium transition-fast inline-flex items-center space-x-2">
+                    <button onclick="window.open('https://wa.me/919249091383?text=Hi, I would like to schedule a phone callback. Please let me know the available slots today or tomorrow between 9 AM and 8 PM IST.', '_blank')" class="bg-primary hover:bg-primary-800 text-white px-6 py-3 rounded-lg font-cta font-medium transition-fast inline-flex items-center space-x-2">
                         <span>Schedule Call</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
@@ -513,25 +513,26 @@ Looking for the best domestic or international tour package?<br>
                 </div>
 
                 <!-- Email Inquiry -->
-                <div class="text-center p-6 bg-surface rounded-2xl card-shadow hover:floating-shadow transition-smooth">
-                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="font-display text-xl font-semibold text-primary mb-2">Email Inquiry</h3>
-                    <p class="text-text-secondary mb-4">Send detailed requirements for comprehensive planning</p>
-                    <div class="text-sm text-text-secondary mb-4">
-                        <div>Response time: 2-4 hours</div>
-                        <div class="text-xs mt-1">Detailed consultation via email</div>
-                    </div>
-                    <a href="mailto:info@fmcholidays@gmail.com ?subject=Travel Consultation Inquiry&body=Hello! I'm interested in planning a trip and would like to discuss my travel requirements." class="bg-secondary hover:bg-secondary-600 text-white px-6 py-3 rounded-lg font-cta font-medium transition-fast inline-flex items-center space-x-2">
-                        <span>Send Email</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
-                        </svg>
-                    </a>
-                </div>
+<div class="text-center p-6 bg-surface rounded-2xl card-shadow hover:floating-shadow transition-smooth">
+    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+        </svg>
+    </div>
+    <h3 class="font-display text-xl font-semibold text-primary mb-2">Email Inquiry</h3>
+    <p class="text-text-secondary mb-4">Send detailed requirements for comprehensive planning</p>
+    <div class="text-sm text-text-secondary mb-4">
+        <div>Response time: 2-4 hours</div>
+        <div class="text-xs mt-1">Detailed consultation via email</div>
+    </div>
+    <a href="mailto:info.fmcholidays@gmail.com?subject=Travel Consultation Inquiry&body=Hello! I'm interested in planning a trip and would like to discuss my travel requirements." class="bg-secondary hover:bg-secondary-600 text-white px-6 py-3 rounded-lg font-cta font-medium transition-fast inline-flex items-center space-x-2">
+        <span>Send Email</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+        </svg>
+    </a>
+</div>
+
 
                 <!-- Office Visit -->
                 <div class="text-center p-6 bg-surface rounded-2xl card-shadow hover:floating-shadow transition-smooth">
@@ -795,6 +796,37 @@ Looking for the best domestic or international tour package?<br>
 
     <script>
         // Mobile menu toggle
+        
+  function sendToWhatsApp(event) {
+    event.preventDefault(); // prevent page reload
+
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const destination = document.getElementById("destination").value;
+    const dates = document.getElementById("travel-dates").value.trim();
+    const group = document.getElementById("group-size").value;
+    const budget = document.getElementById("budget").value;
+    const notes = document.getElementById("requirements").value.trim();
+
+    if (!name || !phone) {
+      alert("Please fill in your name and WhatsApp number.");
+      return;
+    }
+
+    const message = `Hi, I'm *${name}* (%2B${phone}). I'd like to plan a trip. Here's my inquiry:%0A
+• *Destination:* ${destination || "Not specified"}%0A
+• *Travel Dates:* ${dates || "Flexible"}%0A
+• *Group Size:* ${group || "Not specified"}%0A
+• *Budget:* ${budget || "Not specified"}%0A
+• *Special Requirements:* ${notes || "None"}%0A
+Please connect me with an expert for further discussion.`;
+
+    const whatsappURL = `https://wa.me/919249091383?text=${encodeURI(message)}`;
+
+    window.open(whatsappURL, "_blank");
+  }
+
+
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');

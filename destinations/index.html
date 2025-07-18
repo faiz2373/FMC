@@ -106,18 +106,22 @@
                Curated Experiences Across the Globe – Designed Just for You
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button onclick="openTravelQuiz()" class="bg-primary hover:bg-primary-800 text-white px-8 py-4 rounded-xl font-cta font-semibold text-lg transition-smooth flex items-center space-x-3">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                    </svg>
-                    <span>Find Your Perfect Destination</span>
-                </button>
-                <button onclick="showSeasonalCalendar()" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 rounded-xl font-cta font-semibold text-lg transition-smooth flex items-center space-x-3">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                    </svg>
-                    <span>Seasonal Calendar</span>
-                </button>
+                <button onclick="document.getElementById('filter-dropdown').scrollIntoView({ behavior: 'smooth' })" 
+        class="bg-primary hover:bg-primary-800 text-white px-8 py-4 rounded-xl font-cta font-semibold text-lg transition-smooth flex items-center space-x-3">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+    </svg>
+    <span>Find Your Perfect Destination</span>
+</button>
+
+                <button onclick="window.open('https://wa.me/919249091383?text=Hi! I would like to see the Seasonal Calendar. Can you share the details?', '_blank')" 
+    class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 rounded-xl font-cta font-semibold text-lg transition-smooth flex items-center space-x-3">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+    </svg>
+    <span>Seasonal Calendar</span>
+</button>
+
             </div>
         </div>
     </section>
@@ -166,9 +170,12 @@
 
     <!-- CTA -->
     <div class="text-center mt-12">
-      <a href="#contact" class="inline-block bg-primary hover:bg-primary-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all">
-        Customize Your Package
-      </a>
+     <a href="https://wa.me/919249091383?text=Hi! I’m interested in customizing my travel package. Can you help me with the options?" 
+   target="_blank"
+   class="inline-block bg-primary hover:bg-primary-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all">
+   Customize Your Package
+</a>
+
     </div>
   </div>
 </section>
@@ -266,9 +273,12 @@
                         <a href="https://wa.me/919249091383?text=I'm interested in the exclusive Japan Cherry Blossom experience! Can you share more details about the March-April 2025 packages?" target="_blank" class="flex-1 bg-accent hover:bg-accent-600 text-white px-6 py-3 rounded-lg font-cta font-medium text-center transition-smooth">
                             Book Sakura Experience
                         </a>
-                        <button onclick="showSeasonalCalendar()" class="flex-1 border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg font-cta font-medium transition-smooth">
-                            View All Seasons
-                        </button>
+                        <a href="https://wa.me/919249091383?text=Hi!%20Could%20you%20please%20send%20me%20the%20full%20seasonal%20calendar%20of%20your%20destinations%20for%202025?" 
+   target="_blank" 
+   class="flex-1 border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg font-cta font-medium text-center transition-smooth">
+   View All Seasons
+</a>
+
                     </div>
                 </div>
             </div>
